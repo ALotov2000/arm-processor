@@ -19,13 +19,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EXE_Stage
 
-} {} {}} /home/lotov2000/Documents/arm/components/Mux2to1.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/components/Mux2to1.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Mux2to1
-
-Top level modules:
-	Mux2to1
-
 } {} {}} /home/lotov2000/Documents/arm/components/PC_Reg.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/components/PC_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module PC_Reg

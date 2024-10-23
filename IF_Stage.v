@@ -30,9 +30,4 @@ module IF_Stage (
 		.pc(PC_current),
 		.instruction(Instruction)
 	);
-
-	
-	assign Branch_taken = 1'b0;
-	assign freeze = 1'b0;
-	assign BranchAddr = 32'b0;
 endmodule
