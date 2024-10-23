@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -8,3 +9,195 @@ z2
 !i10f 100
 cModel Technology
 d/home/lotov2000/Documents
+vEXE_Stage
+Z0 !s110 1729682127
+!i10b 1
+!s100 9FHj[b17L^W4@bcNGBK3o2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IYLTf[eH^>4<KI?48A1a1B3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/lotov2000/Documents/arm
+w1729677863
+8/home/lotov2000/Documents/arm/EXE_Stage.v
+F/home/lotov2000/Documents/arm/EXE_Stage.v
+!i122 30
+Z4 L0 1 7
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1729682127.000000
+!s107 /home/lotov2000/Documents/arm/EXE_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/EXE_Stage.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+n@e@x@e_@stage
+vID_Stage
+R0
+!i10b 1
+!s100 ffb^[:e7^Q1UH;boW3bjZ3
+R1
+IbDXmRm6SI19i5M>_z@LgF3
+R2
+R3
+w1729677877
+8/home/lotov2000/Documents/arm/ID_Stage.v
+F/home/lotov2000/Documents/arm/ID_Stage.v
+!i122 29
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/lotov2000/Documents/arm/ID_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/ID_Stage.v|
+!i113 1
+R7
+R8
+n@i@d_@stage
+vIF_Stage
+!s110 1729682289
+!i10b 1
+!s100 JaNEce4bECjfK?XC>kVGl0
+R1
+IAj5iK60c=^hi61mJEjNEa1
+R2
+R3
+w1729682231
+8/home/lotov2000/Documents/arm/IF_Stage.v
+F/home/lotov2000/Documents/arm/IF_Stage.v
+!i122 36
+L0 1 38
+R5
+r1
+!s85 0
+31
+!s108 1729682289.000000
+!s107 /home/lotov2000/Documents/arm/IF_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/IF_Stage.v|
+!i113 1
+R7
+R8
+n@i@f_@stage
+vInstruction_Memory
+R0
+!i10b 1
+!s100 b0ak2S`IfzHZdIz`3BONH0
+R1
+IeA<Wzkf=1F1;WYF;_E^Y>3
+R2
+R3
+w1729681955
+8/home/lotov2000/Documents/arm/components/Instruction_Memory.v
+F/home/lotov2000/Documents/arm/components/Instruction_Memory.v
+!i122 35
+L0 2 18
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/lotov2000/Documents/arm/components/Instruction_Memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/components/Instruction_Memory.v|
+!i113 1
+R7
+R8
+n@instruction_@memory
+vMEM_Stage
+R0
+!i10b 1
+!s100 O?F9NA3NLUhb7hNKaWC]42
+R1
+IDZSdCB=c9lDzf0V2SPD0Q3
+R2
+R3
+w1729677924
+8/home/lotov2000/Documents/arm/MEM_Stage.v
+F/home/lotov2000/Documents/arm/MEM_Stage.v
+!i122 31
+Z9 L0 2 7
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/lotov2000/Documents/arm/MEM_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/MEM_Stage.v|
+!i113 1
+R7
+R8
+n@m@e@m_@stage
+vMux2to1
+R0
+!i10b 1
+!s100 I4AJ<W5CWFNELf7T3=E3a0
+R1
+I?X;_n>]b_hCAUS;RdV;^Z2
+R2
+R3
+w1729679163
+8/home/lotov2000/Documents/arm/components/Mux2to1.v
+F/home/lotov2000/Documents/arm/components/Mux2to1.v
+!i122 33
+R9
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/lotov2000/Documents/arm/components/Mux2to1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/components/Mux2to1.v|
+!i113 1
+R7
+R8
+n@mux2to1
+vPC_Reg
+R0
+!i10b 1
+!s100 U4DGiFXJ_M9DB?Q?^j0n:0
+R1
+I>g`>9D<=]MUo6gm;IUCKX0
+R2
+R3
+w1729680598
+8/home/lotov2000/Documents/arm/components/PC_Reg.v
+F/home/lotov2000/Documents/arm/components/PC_Reg.v
+!i122 34
+L0 2 14
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/lotov2000/Documents/arm/components/PC_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/components/PC_Reg.v|
+!i113 1
+R7
+R8
+n@p@c_@reg
+vWB_Stage
+R0
+!i10b 1
+!s100 gga_0WPdc9>VdKAiPE]HK2
+R1
+I>3VjC3_08ndRZ`af6Q;oK2
+R2
+R3
+w1729677949
+8/home/lotov2000/Documents/arm/WB_Stage.v
+F/home/lotov2000/Documents/arm/WB_Stage.v
+!i122 32
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/lotov2000/Documents/arm/WB_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/WB_Stage.v|
+!i113 1
+R7
+R8
+n@w@b_@stage

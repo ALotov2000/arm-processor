@@ -1,0 +1,9 @@
+
+module Program_Counter (
+	input clk, rst,
+	input [31:0] in, 
+	input freeze,
+	output [31:0] out
+);
+	
+endmodule
