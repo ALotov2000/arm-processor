@@ -303,4 +303,13 @@ inout	[35:0]	GPIO_0;					//	GPIO Connection 0
 inout	[35:0]	GPIO_1;					//	GPIO Connection 1
 
 	
+IF_Stage if_stage(
+	.clk(CLOCK_50),
+	.rst(SW[0]),
+	.freeze(1'b0),
+	.Branch_taken(1'b0),
+	.BranchAddr(32'b0),
+	.PC(GPIO_0[31:0]),
+	.Instruction(GPIO_1[31:0])
+);
 endmodule
