@@ -1,8 +1,7 @@
-
-module Mux2to1(
-	input[31:0] in0, in1,
-	input selector,
-	output[31:0] out
+module MUX2TO1 #(parameter WIDTH = 32) (
+    input [WIDTH-1:0] IN0, IN1,
+    input SELECTOR,
+    output [WIDTH-1:0] OUT
 );
-	assign out = ~selector ? in0 : in1;
+    assign OUT = ~SELECTOR ? IN0 : IN1;
 endmodule

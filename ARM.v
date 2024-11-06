@@ -353,9 +353,9 @@ IF_Stage_Reg if_stage_reg(
 
 ID_Stage_Reg id_stage_reg(
 	.clk(clk), .rst(rst),
-	.PC_in(ID_PC),
+	.PC_IN(ID_PC),
 	
-	.PC_out(EX_PC)
+	.PC(EX_PC)
 );
 
 

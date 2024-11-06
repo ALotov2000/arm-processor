@@ -9,7 +9,7 @@ module IF_Stage (
 
 	assign flush = Branch_taken;
 
-	Mux2to1 pc_mux (
+	Mux2to1 #(32) pc_mux (
 		.in0(PC),
 		.in1(BranchAddr),
 		.selector(Branch_taken),
