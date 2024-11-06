@@ -1,5 +1,5 @@
 Assembler report for arm
-Wed Oct 30 14:52:50 2024
+Wed Nov 06 15:36:32 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -11,8 +11,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: arm.sof
-  7. Assembler Device Options: arm.pof
+  6. Assembler Device Options: C:/Users/user/Documents/arm-processor/output_files/arm.sof
+  7. Assembler Device Options: C:/Users/user/Documents/arm-processor/output_files/arm.pof
   8. Assembler Messages
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Oct 30 14:52:50 2024 ;
+; Assembler Status      ; Successful - Wed Nov 06 15:36:32 2024 ;
 ; Revision Name         ; arm                                   ;
 ; Top-level Entity Name ; ARM                                   ;
 ; Family                ; Cyclone II                            ;
@@ -89,37 +89,37 @@ applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+---------------------------+
-; Assembler Generated Files ;
-+---------------------------+
-; File Name                 ;
-+---------------------------+
-; arm.sof                   ;
-; arm.pof                   ;
-+---------------------------+
++------------------------------------------------------------+
+; Assembler Generated Files                                  ;
++------------------------------------------------------------+
+; File Name                                                  ;
++------------------------------------------------------------+
+; C:/Users/user/Documents/arm-processor/output_files/arm.sof ;
+; C:/Users/user/Documents/arm-processor/output_files/arm.pof ;
++------------------------------------------------------------+
 
 
-+-----------------------------------+
-; Assembler Device Options: arm.sof ;
-+----------------+------------------+
-; Option         ; Setting          ;
-+----------------+------------------+
-; Device         ; EP2C35F672C6     ;
-; JTAG usercode  ; 0x0040FA0C       ;
-; Checksum       ; 0x0040FA0C       ;
-+----------------+------------------+
++--------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/user/Documents/arm-processor/output_files/arm.sof ;
++----------------+---------------------------------------------------------------------+
+; Option         ; Setting                                                             ;
++----------------+---------------------------------------------------------------------+
+; Device         ; EP2C35F672C6                                                        ;
+; JTAG usercode  ; 0x0040F9A7                                                          ;
+; Checksum       ; 0x0040F9A7                                                          ;
++----------------+---------------------------------------------------------------------+
 
 
-+-----------------------------------+
-; Assembler Device Options: arm.pof ;
-+--------------------+--------------+
-; Option             ; Setting      ;
-+--------------------+--------------+
-; Device             ; EPCS16       ;
-; JTAG usercode      ; 0x00000000   ;
-; Checksum           ; 0x1C5C408B   ;
-; Compression Ratio  ; 3            ;
-+--------------------+--------------+
++--------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/user/Documents/arm-processor/output_files/arm.pof ;
++--------------------+-----------------------------------------------------------------+
+; Option             ; Setting                                                         ;
++--------------------+-----------------------------------------------------------------+
+; Device             ; EPCS16                                                          ;
+; JTAG usercode      ; 0x00000000                                                      ;
+; Checksum           ; 0x1C5CD372                                                      ;
+; Compression Ratio  ; 3                                                               ;
++--------------------+-----------------------------------------------------------------+
 
 
 +--------------------+
@@ -128,14 +128,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 30 14:52:48 2024
+    Info: Processing started: Wed Nov 06 15:36:28 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off arm -c arm
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 552 megabytes
-    Info: Processing ended: Wed Oct 30 14:52:50 2024
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4609 megabytes
+    Info: Processing ended: Wed Nov 06 15:36:32 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

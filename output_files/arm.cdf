@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("/home/lotov2000/Documents/arm/output_files/") File("arm.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C35F672) Path("C:/Users/user/Documents/arm-processor/output_files/") File("arm.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

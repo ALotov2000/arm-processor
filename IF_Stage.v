@@ -9,11 +9,11 @@ module IF_Stage (
 
 	assign flush = Branch_taken;
 
-	Mux2to1 #(32) pc_mux (
-		.in0(PC),
-		.in1(BranchAddr),
-		.selector(Branch_taken),
-		.out(PC_next)
+	MUX2TO1 #(32) pc_mux (
+		.IN0(PC),
+		.IN1(BranchAddr),
+		.SELECTOR(Branch_taken),
+		.OUT(PC_next)
 	);
 	
 	PC_Reg pc_reg(
