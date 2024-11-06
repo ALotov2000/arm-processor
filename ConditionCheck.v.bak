@@ -20,7 +20,7 @@ module ConditionCheck(
     output reg RESULT
 );
     wire N, Z, C, V;
-    assign {N, Z, C, V} = STATUS;
+    assign {N, Z, C, V} = status;
 
     always @(COND, N, Z, C, V) begin
         RESULT = 1'b0;

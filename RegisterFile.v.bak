@@ -11,7 +11,7 @@ module RegisterFile(
     assign REG1 = REGISTERS[SRC1];
     assign REG2 = REGISTERS[SRC2];
 
-    always @(negedge clk or posedge rst) begin
+    always @(negedge clk or posedge rst)
         if (rst) begin
             for (i = 0; i < 16; i = i + 1)
                 REGISTERS[i] = 32'b0;

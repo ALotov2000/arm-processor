@@ -314,12 +314,32 @@ wire[31:0] IF_Instruction, IF_PC;
 
 wire ID_flush, ID_freeze;
 wire[31:0] ID_Instruction, ID_PC;
+wire ID_HAZARD;               // From hazard detect module
+wire [3:0] ID_STATUS;         // From Status Register
+wire ID_WB_EN;
+wire ID_MEM_R_EN;
+wire ID_MEM_W_EN;
+wire ID_S;
+wire ID_B;
+wire [3:0] ID_EXE_CMD;
+wire [31:0] ID_VAL_RN;
+wire [31:0] ID_VAL_RM;
+wire [11:0] ID_SHIFT_OPERAND;
+wire [23:0] ID_SIGNED_IMM_24;
+wire [3:0] ID_DEST;
+wire [3:0] ID_SRC1;
+wire [3:0] ID_SRC2;
+wire ID_TWO_SRC;
+
 
 wire[31:0] EX_PC;
 
 wire[31:0] MEM_PC;
 
 wire[31:0] WB_PC;
+wire [31:0] WB_WB_VALUE;      // From WB stage
+wire WB_WB_EN;                // From WB stage
+wire [3:0] WB_WB_DEST;        // From WB stage
 
 assign IF_freeze = 1'b0;
 assign IF_Branch_taken = 1'b0;
@@ -351,11 +371,35 @@ IF_Stage_Reg if_stage_reg(
 );
 
 
+ID_STage id_stage(
+	.clk(clk), .rst(rst),
+	.INSTRUCTION(ID_Instruction),
+	.RESULT_WB(WB_WB_VALUE),
+	.WB_EN_IN(WB_WB_EN),
+	.DEST_WB(WB_WB_DEST),
+	.HAZARD(ID_HAZARD),
+	.SR(ID_STATUS),
+
+	.WB_EN(ID_WB_EN)
+	.MEM_R_EN(ID_MEM_R_EN),
+	.MEM_W_EN(ID_MEM_W_EN),
+	.S(ID_S),
+	.B(ID_B),
+	.EXE_CMD(ID_EXE_CMD),
+	.VAL_RN(ID_VAL_RN), .VAL_RM(ID_VAL_RM),
+	.SHIFT_OPERAND(ID_SHIFT_OPERAND),
+	.IMM(ID_IMM),
+	.SIGNED_IMM_24(ID_SIGNED_IMM_24),
+	.DEST(ID_DEST),
+	.SRC1(ID_SRC1), .SRC2(ID_SRC2),
+	.TWO_SRC(ID_TWO_SRC)
+);
+
 ID_Stage_Reg id_stage_reg(
 	.clk(clk), .rst(rst),
-	.PC_in(ID_PC),
+	.PC_IN(ID_PC),
 	
-	.PC_out(EX_PC)
+	.PC(EX_PC)
 );
 
 
