@@ -302,14 +302,75 @@ input          TD_CLK27;            //	TV Decoder 27MHz CLK
 inout	[35:0]	GPIO_0;					//	GPIO Connection 0
 inout	[35:0]	GPIO_1;					//	GPIO Connection 1
 
+wire clk, rst;
+
+assign clk = CLOCK_50;
+assign rst = SW[0];	
+	
+	
+wire IF_freeze, IF_Branch_taken, IF_flush;
+wire[31:0] IF_BranchAddr;
+wire[31:0] IF_Instruction, IF_PC;
+
+wire ID_flush, ID_freeze;
+wire[31:0] ID_Instruction, ID_PC;
+
+wire[31:0] EX_PC;
+
+wire[31:0] MEM_PC;
+
+wire[31:0] WB_PC;
+
+assign IF_freeze = 1'b0;
+assign IF_Branch_taken = 1'b0;
+assign IF_BranchAddr = 32'b0;
+// assign IF_Instruction = GPIO_1[31:0];
+// assign IF_PC = GPIO_0[31:0];
 	
 IF_Stage if_stage(
-	.clk(CLOCK_50),
-	.rst(SW[0]),
-	.freeze(1'b0),
-	.Branch_taken(1'b0),
-	.BranchAddr(32'b0),
-	.PC(GPIO_0[31:0]),
-	.Instruction(GPIO_1[31:0])
+	.clk(clk), .rst(rst),
+	.freeze(IF_freeze),
+	.Branch_taken(IF_Branch_taken),
+	.BranchAddr(IF_BranchAddr),
+	.flush(IF_flush),
+	.PC(IF_PC),
+	.Instruction(IF_Instruction)
 );
+
+IF_Stage_Reg if_stage_reg(
+	.clk(clk), .rst(rst),
+	.freeze_in(IF_freeze),
+	.flush_in(IF_flush),
+	.Instruction_in(IF_Instruction),
+	.PC_in(IF_PC),
+	
+	.freeze_out(ID_freeze),
+	.flush_out(ID_flush),
+	.Instruction_out(ID_Instruction),
+	.PC_out(ID_PC)
+);
+
+
+ID_Stage_Reg id_stage_reg(
+	.clk(clk), .rst(rst),
+	.PC_in(ID_PC),
+	
+	.PC_out(EX_PC)
+);
+
+
+EX_Stage_Reg ex_stage_reg(
+	.clk(clk), .rst(rst),
+	.PC_in(EX_PC),
+	
+	.PC_out(MEM_PC)
+);
+
+MEM_Stage_Reg mem_stage_reg(
+	.clk(clk), .rst(rst),
+	.PC_in(MEM_PC),
+	
+	.PC_out(WB_PC)
+);
+
 endmodule

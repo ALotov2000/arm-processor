@@ -1,23 +1,30 @@
-/home/lotov2000/Documents/arm/WB_Stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/WB_Stage.v
+/home/lotov2000/Documents/arm/PC_Reg.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/PC_Reg.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_Reg
+
+Top level modules:
+	PC_Reg
+
+} {} {}} /home/lotov2000/Documents/arm/Mux2to1.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/Mux2to1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux2to1
+
+Top level modules:
+	Mux2to1
+
+} {} {}} /home/lotov2000/Documents/arm/PC_Adder.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/PC_Adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_Adder
+
+Top level modules:
+	PC_Adder
+
+} {} {}} /home/lotov2000/Documents/arm/WB_Stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/WB_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module WB_Stage
 
 Top level modules:
 	WB_Stage
-
-} {} {}} /home/lotov2000/Documents/arm/ID_Stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/ID_Stage.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ID_Stage
-
-Top level modules:
-	ID_Stage
-
-} {} {}} /home/lotov2000/Documents/arm/EXE_Stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/EXE_Stage.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module EXE_Stage
-
-Top level modules:
-	EXE_Stage
 
 } {} {}} /home/lotov2000/Documents/arm/components/PC_Reg.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/components/PC_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -26,6 +33,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PC_Reg
 
+} {} {}} /home/lotov2000/Documents/arm/EXE_Stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/EXE_Stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EXE_Stage
+
+Top level modules:
+	EXE_Stage
+
 } {} {}} /home/lotov2000/Documents/arm/MEM_Stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/MEM_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MEM_Stage
@@ -33,14 +47,25 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	MEM_Stage
 
-} {} {}} /home/lotov2000/Documents/arm/components/Instruction_Memory.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/components/Instruction_Memory.v
+} {} {}} /home/lotov2000/Documents/arm/IF_Stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/IF_Stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IF_Stage
+
+Top level modules:
+	IF_Stage
+
+} {} {}} /home/lotov2000/Documents/arm/Instruction_Memory.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/Instruction_Memory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Instruction_Memory
 
 Top level modules:
 	Instruction_Memory
 
-} {} {}} /home/lotov2000/Documents/arm/IF_Stage_Reg.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/IF_Stage_Reg.v
+} {} {}} /home/lotov2000/Documents/arm/components/Instruction_Memory.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/components/Instruction_Memory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Instruction_Memory
+
+Top level modules:
+	Instruction_Memory
 
 } {} {}}

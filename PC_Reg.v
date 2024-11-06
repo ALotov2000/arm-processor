@@ -5,7 +5,7 @@ module PC_Reg (
 	input freeze,
 	output reg [31:0] out
 );
-	always @(negedge clk or posedge rst) begin
+	always @(posedge clk or posedge rst) begin
         if (rst) begin
             out <= 32'b0;
         end else begin

@@ -9,29 +9,53 @@ z2
 !i10f 100
 cModel Technology
 d/home/lotov2000/Documents
-vEXE_Stage
-Z0 !s110 1729682127
+vARM
+Z0 !s110 1730284536
 !i10b 1
-!s100 9FHj[b17L^W4@bcNGBK3o2
+!s100 5MbGnZf]Vc?2F]W2Z^NP<0
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IYLTf[eH^>4<KI?48A1a1B3
+Io1=@2a31j>[Pba8?oCQ7K3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 d/home/lotov2000/Documents/arm
-w1729677863
-8/home/lotov2000/Documents/arm/EXE_Stage.v
-F/home/lotov2000/Documents/arm/EXE_Stage.v
-!i122 30
-Z4 L0 1 7
-Z5 OV;L;2020.1;71
+w1730284295
+8/home/lotov2000/Documents/arm/ARM.v
+F/home/lotov2000/Documents/arm/ARM.v
+!i122 37
+L0 48 287
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1729682127.000000
+Z5 !s108 1730284536.000000
+!s107 /home/lotov2000/Documents/arm/ARM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/ARM.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@a@r@m
+vEXE_Stage
+R0
+!i10b 1
+!s100 9FHj[b17L^W4@bcNGBK3o2
+R1
+IYLTf[eH^>4<KI?48A1a1B3
+R2
+R3
+w1729677863
+8/home/lotov2000/Documents/arm/EXE_Stage.v
+F/home/lotov2000/Documents/arm/EXE_Stage.v
+!i122 38
+Z8 L0 1 7
+R4
+r1
+!s85 0
+31
+R5
 !s107 /home/lotov2000/Documents/arm/EXE_Stage.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/EXE_Stage.v|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+R6
+R7
 n@e@x@e_@stage
 vID_Stage
 R0
@@ -44,66 +68,90 @@ R3
 w1729677877
 8/home/lotov2000/Documents/arm/ID_Stage.v
 F/home/lotov2000/Documents/arm/ID_Stage.v
-!i122 29
+!i122 39
+R8
 R4
-R5
 r1
 !s85 0
 31
-R6
+R5
 !s107 /home/lotov2000/Documents/arm/ID_Stage.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/ID_Stage.v|
 !i113 1
+R6
 R7
-R8
 n@i@d_@stage
 vIF_Stage
-!s110 1729682289
+R0
 !i10b 1
-!s100 JaNEce4bECjfK?XC>kVGl0
+!s100 H5;ZTMd<b8IJ?90BQMmYD1
 R1
-IAj5iK60c=^hi61mJEjNEa1
+IAT_MT9CV^EH5ZXBd:h?0P3
 R2
 R3
-w1729682231
+w1730283713
 8/home/lotov2000/Documents/arm/IF_Stage.v
 F/home/lotov2000/Documents/arm/IF_Stage.v
-!i122 36
-L0 1 38
-R5
+!i122 40
+L0 1 36
+R4
 r1
 !s85 0
 31
-!s108 1729682289.000000
+R5
 !s107 /home/lotov2000/Documents/arm/IF_Stage.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/IF_Stage.v|
 !i113 1
+R6
 R7
-R8
 n@i@f_@stage
+vIF_Stage_Reg
+R0
+!i10b 1
+!s100 ocgfMZ5LnaMien538T^5h2
+R1
+IYkX[kT`aEXnF^ZeM[LdLV3
+R2
+R3
+w1730284359
+8/home/lotov2000/Documents/arm/IF_Stage_Reg.v
+F/home/lotov2000/Documents/arm/IF_Stage_Reg.v
+!i122 41
+L0 2 21
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/lotov2000/Documents/arm/IF_Stage_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/IF_Stage_Reg.v|
+!i113 1
+R6
+R7
+n@i@f_@stage_@reg
 vInstruction_Memory
 R0
 !i10b 1
 !s100 b0ak2S`IfzHZdIz`3BONH0
 R1
-IeA<Wzkf=1F1;WYF;_E^Y>3
+IH]VH=WHJiS_1TgiR4:OUE3
 R2
 R3
 w1729681955
-8/home/lotov2000/Documents/arm/components/Instruction_Memory.v
-F/home/lotov2000/Documents/arm/components/Instruction_Memory.v
-!i122 35
+8/home/lotov2000/Documents/arm/Instruction_Memory.v
+F/home/lotov2000/Documents/arm/Instruction_Memory.v
+!i122 42
 L0 2 18
-R5
+R4
 r1
 !s85 0
 31
-R6
-!s107 /home/lotov2000/Documents/arm/components/Instruction_Memory.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/components/Instruction_Memory.v|
+R5
+!s107 /home/lotov2000/Documents/arm/Instruction_Memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/Instruction_Memory.v|
 !i113 1
+R6
 R7
-R8
 n@instruction_@memory
 vMEM_Stage
 R0
@@ -116,66 +164,90 @@ R3
 w1729677924
 8/home/lotov2000/Documents/arm/MEM_Stage.v
 F/home/lotov2000/Documents/arm/MEM_Stage.v
-!i122 31
+!i122 43
 Z9 L0 2 7
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 /home/lotov2000/Documents/arm/MEM_Stage.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/MEM_Stage.v|
 !i113 1
+R6
 R7
-R8
 n@m@e@m_@stage
 vMux2to1
 R0
 !i10b 1
-!s100 I4AJ<W5CWFNELf7T3=E3a0
+!s100 okfkPRT1hV0ja1c;`MQDS3
 R1
-I?X;_n>]b_hCAUS;RdV;^Z2
+IRRdgNl3Bg<;7JTzVX^G9]0
 R2
 R3
-w1729679163
-8/home/lotov2000/Documents/arm/components/Mux2to1.v
-F/home/lotov2000/Documents/arm/components/Mux2to1.v
-!i122 33
+w1729686224
+8/home/lotov2000/Documents/arm/Mux2to1.v
+F/home/lotov2000/Documents/arm/Mux2to1.v
+!i122 44
 R9
-R5
+R4
 r1
 !s85 0
 31
-R6
-!s107 /home/lotov2000/Documents/arm/components/Mux2to1.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/components/Mux2to1.v|
+R5
+!s107 /home/lotov2000/Documents/arm/Mux2to1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/Mux2to1.v|
 !i113 1
+R6
 R7
-R8
 n@mux2to1
+vPC_Adder
+R0
+!i10b 1
+!s100 Z@]WLa>K3WUELcL[T``K63
+R1
+Ici>lXA:WmQhBkK?h8?nEd2
+R2
+R3
+w1729680798
+8/home/lotov2000/Documents/arm/PC_Adder.v
+F/home/lotov2000/Documents/arm/PC_Adder.v
+!i122 45
+L0 1 6
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/lotov2000/Documents/arm/PC_Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/PC_Adder.v|
+!i113 1
+R6
+R7
+n@p@c_@adder
 vPC_Reg
 R0
 !i10b 1
-!s100 U4DGiFXJ_M9DB?Q?^j0n:0
+!s100 =obzh<NR]9]2bPN7`DDR30
 R1
-I>g`>9D<=]MUo6gm;IUCKX0
+I?GzGO[MNAhMdeUjg3NI2I2
 R2
 R3
-w1729680598
-8/home/lotov2000/Documents/arm/components/PC_Reg.v
-F/home/lotov2000/Documents/arm/components/PC_Reg.v
-!i122 34
+w1730284335
+8/home/lotov2000/Documents/arm/PC_Reg.v
+F/home/lotov2000/Documents/arm/PC_Reg.v
+!i122 46
 L0 2 14
-R5
+R4
 r1
 !s85 0
 31
-R6
-!s107 /home/lotov2000/Documents/arm/components/PC_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/components/PC_Reg.v|
+R5
+!s107 /home/lotov2000/Documents/arm/PC_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/PC_Reg.v|
 !i113 1
+R6
 R7
-R8
 n@p@c_@reg
 vWB_Stage
 R0
@@ -188,16 +260,16 @@ R3
 w1729677949
 8/home/lotov2000/Documents/arm/WB_Stage.v
 F/home/lotov2000/Documents/arm/WB_Stage.v
-!i122 32
+!i122 47
+R8
 R4
-R5
 r1
 !s85 0
 31
-R6
+R5
 !s107 /home/lotov2000/Documents/arm/WB_Stage.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/lotov2000/Documents/arm/WB_Stage.v|
 !i113 1
+R6
 R7
-R8
 n@w@b_@stage

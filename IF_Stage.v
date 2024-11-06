@@ -1,10 +1,13 @@
 module IF_Stage (
 	input clk, rst, freeze, Branch_taken,
 	input[31:0] BranchAddr,
-	output[31:0] PC, Instruction
+	output[31:0] PC, Instruction,
+	output flush
 );
 
 	wire[31:0] PC_next, PC_current;
+
+	assign flush = Branch_taken;
 
 	Mux2to1 pc_mux (
 		.in0(PC),
