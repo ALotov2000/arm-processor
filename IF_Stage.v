@@ -15,7 +15,7 @@ module IF_Stage (
 		.SELECTOR(Branch_taken),
 		.OUT(PC_next)
 	);
-	
+
 	PC_Reg pc_reg(
 		.clk(clk), .rst(rst),
 		.in(PC_next),
