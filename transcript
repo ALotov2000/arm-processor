@@ -1,13 +1,55 @@
+project open /home/lotov2000/Documents/arm/arm
 # Loading project arm
 # Compile of ARM.v was successful.
-# Compile of EXE_Stage.v was successful.
-# Compile of ID_Stage.v was successful.
-# Compile of IF_Stage.v was successful.
-# Compile of IF_Stage_Reg.v was successful.
-# Compile of Instruction_Memory.v was successful.
-# Compile of MEM_Stage.v was successful.
-# Compile of Mux2to1.v was successful.
-# Compile of PC_Adder.v was successful.
-# Compile of PC_Reg.v was successful.
-# Compile of WB_Stage.v was successful.
-# 11 compiles, 0 failed with no errors.
+# Compile of execution.test.v was successful.
+# Compile of intruction-fetch.test.v was successful.
+# Compile of alu.component.v was successful.
+# Compile of condition-check.component.v was successful.
+# Compile of control-unit.component.v was successful.
+# Compile of instruction-memory.component.v was successful.
+# Compile of memory.component.v was successful.
+# Compile of mux2.component.v was successful.
+# Compile of neg-register.component.v was successful.
+# Compile of pc-adder.component.v was successful.
+# Compile of pc-register.component.v was successful.
+# Compile of register-file.component.v was successful.
+# Compile of register.component.v was successful.
+# Compile of status-register.component.v was successful.
+# Compile of execution.stage-register.v was successful.
+# Compile of instruction-fetch.stage-register.v was successful.
+# Compile of interuction-decode.stage-register.v was successful.
+# Compile of memory.stage-register.v was successful.
+# Compile of execution.stage.v was successful.
+# Compile of instruction-decode.stage.v was successful.
+# Compile of instruction-fetch.stage.v was successful.
+# Compile of memory.stage.v was successful.
+# Compile of write-back.stage.v was successful.
+# Compile of val2Generator.component.v was successful.
+# 25 compiles, 0 failed with no errors.
+# Compile of ARM.v was successful.
+# Compile of arm.v was successful.
+# Compile of alu.component.v was successful.
+# Compile of condition-check.component.v was successful.
+# Compile of control-unit.component.v was successful.
+# Compile of hazardControlUnit.component.v was successful.
+# Compile of instruction-memory.component.v was successful.
+# Compile of memory.component.v was successful.
+# Compile of mux2.component.v was successful.
+# Compile of neg-register.component.v was successful.
+# Compile of pc-adder.component.v was successful.
+# Compile of pc-register.component.v was successful.
+# Compile of register-file.component.v was successful.
+# Compile of register.component.v was successful.
+# Compile of registerWithFreeze.v was successful.
+# Compile of status-register.component.v was successful.
+# Compile of val2Generator.component.v was successful.
+# Compile of execution.stage-register.v was successful.
+# Compile of instruction-fetch.stage-register.v was successful.
+# Compile of interuction-decode.stage-register.v was successful.
+# Compile of memory.stage-register.v was successful.
+# Compile of execution.stage.v was successful.
+# Compile of instruction-decode.stage.v was successful.
+# Compile of instruction-fetch.stage.v was successful.
+# Compile of memory.stage.v was successful.
+# Compile of write-back.stage.v was successful.
+# 26 compiles, 0 failed with no errors.
