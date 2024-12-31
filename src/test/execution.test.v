@@ -5,14 +5,16 @@ module ExecutionTest();
     reg clk;
     reg rst;
     
+    wire flush, freeze;
+    
     wire[31:0] branchAddress_if, pc_if, instruction_if;
-    wire branchTaken_if, freeze_if, flush_if;
+    wire branchTaken_if;
     
     wire[31:0] pc_id, instruction_id, valRn_id, valRm_id;
     wire[23:0] imm24_id;
     wire[11:0] shiftOperand_id;
     wire[3:0] status_id, executionCommand_id, destination_id, src1_id, src2_id;
-    wire flush_id, hazard_id, writebackEnabled_id, memoryReadEnabled_id, memoryWriteEnabled_id, b_id, s_id, imm_id, twoSrc_id;
+    wire hazard_id, writebackEnabled_id, memoryReadEnabled_id, memoryWriteEnabled_id, b_id, s_id, imm_id, twoSrc_id;
     
     wire[31:0] pc_exe;
     wire writebackEnabled_exe, memoryReadEnabled_exe, memoryWriteEnabled_exe, b_exe, s_exe;
@@ -37,7 +39,7 @@ module ExecutionTest();
     freeze_if,
     
     hazard_id,
-
+    
     writebackDestination_wb,
     writebackEnabled_wb,
     writebackValue_wb
@@ -45,19 +47,18 @@ module ExecutionTest();
     
     InstructionFetchStage ifStage (
     clk, rst,
-    freeze_if, branchTaken_if,
+    freeze, branchTaken_if,
     branchAddress_if,
     
     pc_if, instruction_if,
-    flush_if
+    flush
     );
     
     InstructionFetchStageReg ifStageReg (
     clk, rst,
-    freeze_if, flush_if,
+    freeze, flush,
     pc_if, instruction_if,
     
-    freeze_id, flush_id,
     pc_id, instruction_id
     );
     

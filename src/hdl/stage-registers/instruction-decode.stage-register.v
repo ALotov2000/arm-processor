@@ -52,9 +52,11 @@ module InstructionDecodeStageReg (clk,
     output [3:0] destination;
     output [3:0] status;
     
-    Register #(3*1 + 2*1 + 4*1 + 32*1 + 32*2 + 1*1 + 12*1 + 24*1 + 4*1 + 4*1) register (
+    RegisterWithFreezeAndFlush #(3*1 + 2*1 + 4*1 + 32*1 + 32*2 + 1*1 + 12*1 + 24*1 + 4*1 + 4*1) u_RegisterWithFreezeAndFlush (
     .clk (clk),
     .rst (rst),
+    .freeze (1'b0),
+    .flush (flush),
     .in  ({
     writeBackEnabled_in,
     memoryReadEnabled_in,
@@ -88,4 +90,8 @@ module InstructionDecodeStageReg (clk,
     status
     })
     );
+
+    always @(writeBackEnabled_in) begin
+        $display("instruction stage register: writebackEnabled_in = %b", writeBackEnabled_in);
+    end
 endmodule

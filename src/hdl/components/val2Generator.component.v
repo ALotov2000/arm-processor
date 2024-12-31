@@ -33,10 +33,10 @@ module Val2Generator(valRm,
     
     assign val2 = (memoryInstruction == 1'b1)  ? { {20{shiftOperand[11]}}, shiftOperand} :
     (imm == 1'b1) ? immediate32bit :
-    (shift == `LSL) ? valRm <<  {1'b0, shiftImmediate} :
-    (shift == `LSR) ? valRm >>  {1'b0, shiftImmediate} :
-    (shift == `ASR) ? valRm >>> {1'b0, shiftImmediate} :
-    rotatedValRm; // shift == `ROR
+    (shift == `LSL) ? valRm <<  {shiftImmediate} :
+    (shift == `LSR) ? valRm >>  {shiftImmediate} :
+    (shift == `ASR) ? valRm >>> {shiftImmediate} :
+    rotatedValRm; // shift == `ROR  
     
     always@(*) begin
         

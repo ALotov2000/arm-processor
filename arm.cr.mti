@@ -1,44 +1,23 @@
-/home/lotov2000/Documents/arm/src/hdl/components/mux2.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/mux2.component.v
+/home/lotov2000/Documents/arm/src/test/execution.test.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/test/execution.test.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ExecutionTest
+
+Top level modules:
+	ExecutionTest
+
+} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/mux2.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/mux2.component.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Mux2
 
 Top level modules:
 	Mux2
 
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/stages/execution.stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/stages/execution.stage.v
+} {} {}} /home/lotov2000/Documents/arm/src/test/intruction-fetch.test.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/test/intruction-fetch.test.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ExecutionStage
+-- Compiling module InstructionFetchTest
 
 Top level modules:
-	ExecutionStage
-
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/control-unit.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/control-unit.component.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ControlUnit
-
-Top level modules:
-	ControlUnit
-
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/instruction-memory.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/instruction-memory.component.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module InstructionMemory
-
-Top level modules:
-	InstructionMemory
-
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/memory.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/memory.component.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Memory
-
-Top level modules:
-	Memory
-
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/stage-registers/execution.stage-register.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/stage-registers/execution.stage-register.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ExecutionStageReg
-
-Top level modules:
-	ExecutionStageReg
+	InstructionFetchTest
 
 } {} {}} /home/lotov2000/Documents/arm/src/hdl/components/register-file.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/register-file.component.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -47,27 +26,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	RegisterFile
 
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/condition-check.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/condition-check.component.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ConditionCheck
-
-Top level modules:
-	ConditionCheck
-
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/alu.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/alu.component.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ALU
-
-Top level modules:
-	ALU
-
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/stages/write-back.stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/stages/write-back.stage.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module WriteBackStage
-
-Top level modules:
-	WriteBackStage
-
 } {} {}} /home/lotov2000/Documents/arm/src/hdl/stages/memory.stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/stages/memory.stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MemoryStage
@@ -75,12 +33,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	MemoryStage
 
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/val2Generator.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/val2Generator.component.v
+} {} {}} /home/lotov2000/Documents/arm/src/hdl/stages/write-back.stage.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/stages/write-back.stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Val2Generator
+-- Compiling module WriteBackStage
 
 Top level modules:
-	Val2Generator
+	WriteBackStage
 
 } {} {}} /home/lotov2000/Documents/arm/src/hdl/components/neg-register.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/neg-register.component.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -96,13 +54,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Register
 
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/pc-register.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/pc-register.component.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module PCRegister
-
-Top level modules:
-	PCRegister
-
 } {} {}} /home/lotov2000/Documents/arm/src/hdl/components/status-register.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/status-register.component.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module StatusRegister
@@ -117,12 +68,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PCAdder
 
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/registerWithFreeze.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/registerWithFreeze.v
+} {} {}} /home/lotov2000/Documents/arm/src/hdl/ARM.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/ARM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module RegisterWithFreeze
+-- Compiling module ARM
 
 Top level modules:
-	RegisterWithFreeze
+	ARM
+
+} {} {}} /home/lotov2000/Documents/arm/src/test/instruction-decode.test.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/test/instruction-decode.test.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module InstructionDecodeTest
+
+Top level modules:
+	InstructionDecodeTest
 
 } {} {}} /home/lotov2000/Documents/arm/src/hdl/stage-registers/interuction-decode.stage-register.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/stage-registers/interuction-decode.stage-register.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -130,12 +88,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	InstructionDecodeStageReg
-
-} {} {}} /home/lotov2000/Documents/arm/src/hdl/components/hazardControlUnit.component.v {1 {vlog -work work -stats=none /home/lotov2000/Documents/arm/src/hdl/components/hazardControlUnit.component.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module HazardControlUnit
-
-Top level modules:
-	HazardControlUnit
 
 } {} {}}

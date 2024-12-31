@@ -39,4 +39,9 @@ module MemoryStageReg (clk,
     writeBackEnabled
     })
     );
+
+    always @(writeBackEnabled_in) begin
+        $display("memory stage register: writebackEnabled_in = %b", writeBackEnabled_in);
+        $display("memory stage register: writebackEnabled = %b", writeBackEnabled);
+    end
 endmodule

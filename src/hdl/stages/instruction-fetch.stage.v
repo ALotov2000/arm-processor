@@ -1,15 +1,17 @@
-module InstructionFetchStage (input clk,
+module InstructionFetchStage (clk,
                               rst,
                               freeze,
                               Branch_taken,
-                              input[31:0] BranchAddr,
-                              output[31:0] PC,
-                              Instruction,
-                              output flush);
+                              BranchAddr,
+                              PC,
+                              Instruction);
+    
+    input clk, rst;
+    input freeze, Branch_taken;
+    input[31:0] BranchAddr;
+    output[31:0] PC, Instruction;
     
     wire[31:0] PC_next, PC_current;
-    
-    assign flush = Branch_taken;
     
     Mux2 #(32) pc_mux (
     .in0(PC),
@@ -35,4 +37,13 @@ module InstructionFetchStage (input clk,
     .pc(PC_current),
     .instruction(Instruction)
     );
+
+    always @(posedge clk) begin
+        if (~rst) begin
+            $display("instruction fetch stage: PC_current=%b", PC_current);
+            $display("instruction fetch stage: PC=%b", PC);
+            $display("instruction fetch stage: PC_next=%b", PC_next);
+            $display("instruction fetch stage: Branch_Taken=%b", Branch_taken);
+        end
+    end
 endmodule

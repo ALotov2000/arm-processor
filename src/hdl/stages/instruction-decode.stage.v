@@ -57,7 +57,7 @@ module InstructionDecodeStage (clk,
     assign RM            = INSTRUCTION[3:0];
     assign SHIFT_OPERAND = INSTRUCTION[11:0];
     assign SIGNED_IMM_24 = INSTRUCTION[23:0];
-    assign IMM           = INSTRUCTION[24];
+    assign IMM           = INSTRUCTION[25];
     
     assign DEST = RD;
     
@@ -104,8 +104,8 @@ module InstructionDecodeStage (clk,
     assign CONTROL = ~CONDITION | HAZARD;
     
     Mux2 #(9) controlMux(
-    .in0(9'b0),
-    .in1({TP_S, TP_B, TP_EXE_CMD, TP_MEM_W_EN, TP_MEM_R_EN, TP_WB_EN}),
+    .in0({TP_S, TP_B, TP_EXE_CMD, TP_MEM_W_EN, TP_MEM_R_EN, TP_WB_EN}),
+    .in1(9'b0),
     .selector(CONTROL),
     
     .out({S, B, EXE_CMD, MEM_W_EN, MEM_R_EN, WB_EN})
@@ -113,5 +113,9 @@ module InstructionDecodeStage (clk,
     
     assign TWO_SRC = ~I | MEM_W_EN;
     
-    
+    always @(CONTROL) begin
+        $display("instruction decode stage: control = %b", CONTROL);
+        $display("instruction decode stage: control = %b", CONTROL);
+        $display("instruction decode stage: controlUnit's writeBackEnabled = %b", TP_WB_EN);
+    end
 endmodule

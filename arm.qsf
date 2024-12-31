@@ -471,20 +471,25 @@ set_location_assignment PIN_V24 -to GPIO_1[32]
 set_location_assignment PIN_V23 -to GPIO_1[33]
 set_location_assignment PIN_W25 -to GPIO_1[34]
 set_location_assignment PIN_W23 -to GPIO_1[35]
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE src/hdl/arm.module.v
+set_global_assignment -name VERILOG_FILE src/hdl/ARM.v
 set_global_assignment -name VERILOG_FILE "src/hdl/stages/write-back.stage.v"
 set_global_assignment -name VERILOG_FILE src/hdl/stages/memory.stage.v
 set_global_assignment -name VERILOG_FILE "src/hdl/stages/instruction-fetch.stage.v"
 set_global_assignment -name VERILOG_FILE "src/hdl/stages/instruction-decode.stage.v"
 set_global_assignment -name VERILOG_FILE src/hdl/stages/execution.stage.v
 set_global_assignment -name VERILOG_FILE "src/hdl/stage-registers/memory.stage-register.v"
-set_global_assignment -name VERILOG_FILE "src/hdl/stage-registers/interuction-decode.stage-register.v"
 set_global_assignment -name VERILOG_FILE "src/hdl/stage-registers/instruction-fetch.stage-register.v"
+set_global_assignment -name VERILOG_FILE "src/hdl/stage-registers/instruction-decode.stage-register.v"
 set_global_assignment -name VERILOG_FILE "src/hdl/stage-registers/execution.stage-register.v"
-set_global_assignment -name VERILOG_FILE src/hdl/ARM.v
 set_global_assignment -name VERILOG_FILE src/hdl/components/val2Generator.component.v
 set_global_assignment -name VERILOG_FILE "src/hdl/components/status-register.component.v"
-set_global_assignment -name VERILOG_FILE src/hdl/components/registerWithFreeze.v
+set_global_assignment -name VERILOG_FILE src/hdl/components/registerWithFreezeAndFlush.component.v
 set_global_assignment -name VERILOG_FILE src/hdl/components/register.component.v
 set_global_assignment -name VERILOG_FILE "src/hdl/components/register-file.component.v"
 set_global_assignment -name VERILOG_FILE "src/hdl/components/pc-register.component.v"
@@ -497,9 +502,4 @@ set_global_assignment -name VERILOG_FILE src/hdl/components/hazardControlUnit.co
 set_global_assignment -name VERILOG_FILE "src/hdl/components/control-unit.component.v"
 set_global_assignment -name VERILOG_FILE "src/hdl/components/condition-check.component.v"
 set_global_assignment -name VERILOG_FILE src/hdl/components/alu.component.v
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,17 +1,17 @@
 module ARMModule (clk,
-            rst);
+                  rst);
     input clk, rst;
     
     wire freeze, flush, hazard;
     wire twoSrc;
     wire [3:0] src1, src2;
     
-    wire [31:0] pc_if, insturction_if;
+    wire [31:0] pc_if, instruction_if;
     
     wire writeBackEnabled_id, memoryReadEnabled_id, memoryWriteEnabled_id;
     wire b_id, s_id;
     wire [3:0] executionCommand_id;
-    wire [31:0] pc_id, insturction_id;
+    wire [31:0] pc_id, instruction_id;
     wire [31:0] valRn_id, valRm_id;
     wire imm_id;
     wire [11:0] shiftOperand_id;
@@ -43,7 +43,6 @@ module ARMModule (clk,
     
     wire [3:0] status_in, status;
     
-    assign hazard = 1'b0; // todo: this will be changed when hazard block is added
     assign flush  = b_exe;
     assign freeze = hazard;
     
@@ -51,11 +50,10 @@ module ARMModule (clk,
     .clk          (clk),
     .rst          (rst),
     .freeze       (freeze),
-    .Branch_taken (branchTaken_exe),
+    .Branch_taken (b_exe),
     .BranchAddr   (branchAddress_exe),
     .PC           (pc_if),
-    .Instruction  (instruction_if),
-    .flush        (flush)
+    .Instruction  (instruction_if)
     );
     
     InstructionFetchStageReg u_InstructionFetchStageReg(
@@ -64,7 +62,7 @@ module ARMModule (clk,
     .freeze          (freeze),
     .flush           (flush),
     .PC_in           (pc_if),
-    .Instruction_in  (insturction_if),
+    .Instruction_in  (instruction_if),
     .PC_out          (pc_id),
     .Instruction_out (instruction_id)
     );
@@ -88,7 +86,7 @@ module ARMModule (clk,
     .EXE_CMD       (executionCommand_id),
     .VAL_RN        (valRn_id),
     .VAL_RM        (valRm_id),
-    .IMM           (imm),
+    .IMM           (imm_id),
     .SHIFT_OPERAND (shiftOperand_id),
     .SIGNED_IMM_24 (imm24_id),
     .DEST          (destination_id),
@@ -153,13 +151,13 @@ module ARMModule (clk,
     ExecutionStageReg u_ExecutionStageReg(
     .clk                  (clk),
     .rst                  (rst),
-    .writebackEnabledIn   (writebackEnabled_exe),
+    .writebackEnabledIn   (writeBackEnabled_exe),
     .memoryReadEnabledIn  (memoryReadEnabled_exe),
     .memoryWriteEnabledIn (memoryWriteEnabled_exe),
     .aluResultIn          (aluResult_exe),
     .valRmIn              (valRm_exe),
     .destinationIn        (destination_exe),
-    .writebackEnabled     (writebackEnabled_mem),
+    .writebackEnabled     (writeBackEnabled_mem),
     .memoryReadEnabled    (memoryReadEnabled_mem),
     .memoryWriteEnabled   (memoryWriteEnabled_mem),
     .aluResult            (aluResult_mem),

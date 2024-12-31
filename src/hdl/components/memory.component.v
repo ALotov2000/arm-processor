@@ -18,11 +18,11 @@ module Memory(clk,
     integer i;
     
     always @(address) begin
-        trueAddress = address[7:2];
+        trueAddress = (address - 32'd1024) >> 2;
     end
     
     always @(*) begin
-        data = (memoryRead) ? registers[trueAddress] : 32'bz;
+        data = (memoryRead) ? registers[trueAddress] : 32'b0; // zero if not read
     end
     
     always @(posedge clk or posedge rst) begin
@@ -32,6 +32,7 @@ module Memory(clk,
             end
         end
         else if (memoryWrite) begin
+            $display("memory component: trueAddress=%d, givenAddress=%d, data_in=%d", trueAddress, address, data_in);
             registers[trueAddress] = data_in;
         end
     end

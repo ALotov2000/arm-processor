@@ -38,7 +38,6 @@ module ConditionCheck(input [3:0] COND,
             `GT: RESULT     = ~Z & (N == V);      // SigNed Greater ThaN
             `LE: RESULT     = Z | (N != V);  // SigNed Less ThaN or Equal
             `AL: RESULT     = 1'b1;               // Always
-            default: RESULT = 1'b0;               // INvalid coNdition
         endcase
     end
 endmodule

@@ -35,15 +35,16 @@ module ExecutionStage(clk,
     
     assign memoryInstruction = memoryReadEnabled | memoryWriteEnabled;
     
-    assign branchAddress = pc + {8'b0, imm24};
+    assign branchAddress = pc + {{6{imm24[23]}}, imm24, 2'b0};
     
-    Val2Generator val2Generator (
-    valRm,
-    shiftOperand,
-    imm,
-    memoryInstruction,
-    val2
+    Val2Generator u_Val2Generator(
+        .valRm             (valRm             ),
+        .shiftOperand      (shiftOperand      ),
+        .imm               (imm               ),
+        .memoryInstruction (memoryInstruction ),
+        .val2              (val2              )
     );
+    
     
     ALU alu(
     val1, val2,

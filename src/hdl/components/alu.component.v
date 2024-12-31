@@ -33,7 +33,7 @@ module ALU (val1,
             4'b0100:
             {c, aluResult} = val1 -  val2;
             4'b0101:
-            {c, aluResult} = val1 -  val2 - carryIn;
+            {c, aluResult} = val1 -  val2 - {31'b0, ~carryIn};
             4'b0110:
             aluResult = val1 &  val2;
             4'b0111:

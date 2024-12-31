@@ -32,20 +32,26 @@
 `define BRANCH_INS_TYPE  2'b10
 `define CO_PROC_INS_TYPE  2'b11
 
-`define WRITE 1'b1
-`define LOAD 1'b0
+`define WRITE 1'b0
+`define LOAD 1'b1
 
-module ControlUnit(input [3:0] OPCODE,
-                   input [1:0] MODE,
-                   input S_IN,
-                   output reg [3:0] EXE_CMD,
-                   output reg S,
+module ControlUnit(OPCODE,
+                   MODE,
+                   S_IN,
+                   EXE_CMD,
+                   S,
                    B,
                    MEM_W_EN,
                    MEM_R_EN,
                    WB_EN);
     
-    always @(*) begin
+    input [3:0] OPCODE;
+    input [1:0] MODE;
+    input S_IN;
+    output reg [3:0] EXE_CMD;
+    output reg S, B, MEM_W_EN, MEM_R_EN, WB_EN;
+    
+    always @(OPCODE, MODE, S_IN) begin
         S        = S_IN;
         B        = 0;
         MEM_W_EN = 0;
