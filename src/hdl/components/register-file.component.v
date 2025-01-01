@@ -16,10 +16,11 @@ module RegisterFile(input clk,
     
     always @(negedge clk or posedge rst) begin
         if (rst) begin
-            for (i = 0; i < 16; i = i + 1)
-                REGISTERS[i] = 32'b0;
-                end else if (WB_EN) begin
-                REGISTERS[DEST_WB] = RESULT_WB;
+            for (i = 0; i < 16; i = i + 1)begin
+                REGISTERS[i] <= i;
+            end
+        end else if (WB_EN) begin
+            REGISTERS[DEST_WB] <= RESULT_WB;
         end
     end
 endmodule

@@ -305,7 +305,7 @@ inout	[35:0]	GPIO_1;					//	GPIO Connection 1
 wire clk, rst;
 
 assign clk = CLOCK_50;
-assign rst = SW[0];
+assign rst = SW[1];
 
 ARMModule u_ARMModule(
 	.clk (clk ),
