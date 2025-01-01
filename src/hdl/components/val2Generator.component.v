@@ -3,13 +3,13 @@
 `define ASR 2'b10
 `define ROR 2'b11
 
-module Val2Generator(valRm,
+module Val2Generator(val2genIn,
                      shiftOperand,
                      imm,
                      memoryInstruction,
                      val2);
     
-    input [31:0] valRm;
+    input [31:0] val2genIn;
     input [11:0] shiftOperand;
     input imm;
     input memoryInstruction;
@@ -33,9 +33,9 @@ module Val2Generator(valRm,
     
     assign val2 = (memoryInstruction == 1'b1)  ? { {20{shiftOperand[11]}}, shiftOperand} :
     (imm == 1'b1) ? immediate32bit :
-    (shift == `LSL) ? valRm <<  {shiftImmediate} :
-    (shift == `LSR) ? valRm >>  {shiftImmediate} :
-    (shift == `ASR) ? valRm >>> {shiftImmediate} :
+    (shift == `LSL) ? val2genIn <<  {shiftImmediate} :
+    (shift == `LSR) ? val2genIn >>  {shiftImmediate} :
+    (shift == `ASR) ? val2genIn >>> {shiftImmediate} :
     rotatedValRm; // shift == `ROR  
     
     always@(*) begin
@@ -46,7 +46,7 @@ module Val2Generator(valRm,
             immediate32bit = {immediate32bit[1:0], immediate32bit[31:2]};
         end
         
-        rotatedValRm = valRm;
+        rotatedValRm = val2genIn;
         
         for(i = 0; i <= shiftOperand[11:7]; i = i + 1) begin
             rotatedValRm = {rotatedValRm[0], rotatedValRm[31:1]};

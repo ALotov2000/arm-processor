@@ -1,8 +1,10 @@
 module ARMModule (
     clk,
-    rst
+    rst,
+    forwardingEnabled
 );
   input clk, rst;
+  input forwardingEnabled;
 
   wire freeze, flush, hazard;
   wire twoSrc;
@@ -30,10 +32,11 @@ module ARMModule (
   wire [23:0] imm24_exe;
   wire [3:0] destination_exe;
   wire [3:0] status_exe;
-  wire [31:0] aluResult_exe /* synthesis keep */;
+  wire [31:0] aluResult_exe  /* synthesis keep */;
   wire [31:0] branchAddress_exe;
   wire [3:0] statusOut_exe;
   wire [3:0] src1_exe, src2_exe;
+  wire [1:0] src1Sel_exe, src2Sel_exe;
 
   wire writeBackEnabled_mem, memoryReadEnabled_mem, memoryWriteEnabled_mem;
   wire [31:0] aluResult_mem, valRm_mem;
@@ -93,8 +96,8 @@ module ARMModule (
       .SHIFT_OPERAND(shiftOperand_id),
       .SIGNED_IMM_24(imm24_id),
       .DEST         (destination_id),
-      .SRC1         (src1),
-      .SRC2         (src2),
+      .SRC1         (src1_id),
+      .SRC2         (src2_id),
       .TWO_SRC      (twoSrc)
   );
 
@@ -150,9 +153,15 @@ module ARMModule (
       .shiftOperand      (shiftOperand_exe),
       .imm24             (imm24_exe),
       .status            (status_exe),
-      .aluResult         (aluResult_exe),
-      .branchAddress     (branchAddress_exe),
-      .statusOut         (statusOut_exe)
+
+      .forwarded_mem(aluResult_mem),
+      .forwarded_wb(writeBackValue_wb),
+      .src1Sel(src1Sel_exe),
+      .src2Sel(src2Sel_exe),
+
+      .aluResult    (aluResult_exe),
+      .branchAddress(branchAddress_exe),
+      .statusOut    (statusOut_exe)
   );
 
   ExecutionStageReg u_ExecutionStageReg (
@@ -215,6 +224,7 @@ module ARMModule (
   );
 
   HazardControlUnit u_HazardControlUnit (
+      .forwardingEnabled   (forwardingEnabled),
       .twoSrc              (twoSrc),
       .src1                (src1_id),
       .src2                (src2_id),
@@ -224,5 +234,18 @@ module ARMModule (
       .writeBackEnabled_mem(writeBackEnabled_mem),
       .hazard              (hazard)
   );
+
+  ForwardingUnit u_ForwardingUnit (
+      .forwardingEnabled   (forwardingEnabled),
+      .writeBackEnabled_wb (writeBackEnabled_wb),
+      .writeBackEnabled_mem(writeBackEnabled_mem),
+      .destination_wb      (destination_wb),
+      .destination_mem     (destination_mem),
+      .src1                (src1_exe),
+      .src2                (src2_exe),
+      .src1Sel             (src1Sel_exe),
+      .src2Sel             (src2Sel_exe)
+  );
+
 
 endmodule

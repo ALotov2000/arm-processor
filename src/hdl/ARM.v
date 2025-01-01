@@ -302,14 +302,17 @@ input          TD_CLK27;            //	TV Decoder 27MHz CLK
 inout	[35:0]	GPIO_0;					//	GPIO Connection 0
 inout	[35:0]	GPIO_1;					//	GPIO Connection 1
 
-wire clk, rst;
+wire clk, rst, forwardingEnabled  /* synthesis keep */;
 
 assign clk = CLOCK_50;
 assign rst = SW[1];
+assign forwardingEnabled = SW[0];
+
 
 ARMModule u_ARMModule(
 	.clk (clk ),
-	.rst (rst )
+	.rst (rst ),
+	.forwardingEnabled (forwardingEnabled)
 );
 
 
