@@ -23,19 +23,12 @@ module HazardControlUnit (
     $display("hazard control: writeBackEnabled_exe = %b", writeBackEnabled_exe);
     $display("hazard control: writeBackEnabled_mem = %b", writeBackEnabled_mem);
 
-    if (forwardingEnabled) begin
-        if (writeBackEnabled_exe) begin
-            if (src1 == destination_exe || (twoSrc && src2 == destination_exe)) begin
-                hazard = 1'b1;
-            end
-        end
-    end else begin
-      if (writeBackEnabled_exe) begin
-        if (src1 == destination_exe || (twoSrc && src2 == destination_exe)) begin
-          hazard = 1'b1;
-        end
+    if (writeBackEnabled_exe) begin
+      if (src1 == destination_exe || (twoSrc && src2 == destination_exe)) begin
+        hazard = 1'b1;
       end
-
+    end
+    if (~forwardingEnabled) begin
       if (writeBackEnabled_mem) begin
         if (src1 == destination_mem || (twoSrc && src2 == destination_mem)) begin
           hazard = 1'b1;

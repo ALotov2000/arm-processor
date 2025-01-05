@@ -66474,3 +66474,5 @@ do do_sim.tcl
 # ** Note: $stop    : src/test/integration.test.v(30)
 #    Time: 10025 ps  Iteration: 0  Instance: /ARMModuleTest
 # Break in Module ARMModuleTest at src/test/integration.test.v line 30
+# End time: 15:28:53 on Jan 01,2025, Elapsed time: 0:34:12
+# Errors: 0, Warnings: 0
