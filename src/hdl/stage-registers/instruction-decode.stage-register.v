@@ -1,6 +1,7 @@
 module InstructionDecodeStageReg (
     clk,
     rst,
+    freeze,
     flush,
     writeBackEnabled_in,
     memoryReadEnabled_in,
@@ -35,7 +36,8 @@ module InstructionDecodeStageReg (
     src1,
     src2
 );
-  input clk, rst, flush;
+  input clk, rst;
+  input freeze, flush;
   input writeBackEnabled_in, memoryReadEnabled_in, memoryWriteEnabled_in;
   input b_in, s_in;
   input [3:0] executionCommand_in;
@@ -64,7 +66,7 @@ module InstructionDecodeStageReg (
   RegisterWithFreezeAndFlush #(3*1 + 2*1 + 4*1 + 32*1 + 32*2 + 1*1 + 12*1 + 24*1 + 4*1 + 4*1 + 4*2) u_RegisterWithFreezeAndFlush (
       .clk(clk),
       .rst(rst),
-      .freeze(1'b0),
+      .freeze(freeze),
       .flush(flush),
       .in({
         writeBackEnabled_in,

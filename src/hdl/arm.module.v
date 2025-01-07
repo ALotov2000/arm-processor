@@ -1,12 +1,25 @@
 module ARMModule (
     clk,
     rst,
-    forwardingEnabled
+    forwardingEnabled,
+
+    SRAMData,
+    SRAMAddress,
+    SRAMUB,
+    SRAMLB,
+    SRAMWE,
+    SRAMOE,
+    SRAMCE
 );
   input clk, rst;
   input forwardingEnabled;
 
-  wire freeze, flush, hazard;
+  inout [15:0] SRAMData;
+  output [17:0] SRAMAddress;
+  output SRAMUB, SRAMLB, SRAMOE, SRAMCE, SRAMWE;
+
+  wire flush, hazard;
+  wire hazardFreeze, SRAMFreeze, bothFreeze;
   wire twoSrc;
   wire [31:0] pc_if, instruction_if;
 
@@ -49,13 +62,14 @@ module ARMModule (
 
   wire [3:0] status_in, status;
 
-  assign flush  = b_exe;
-  assign freeze = hazard;
+  assign flush = b_exe;
+  assign hazardFreeze = hazard;
+  assign bothFreeze = hazardFreeze | SRAMFreeze;
 
   InstructionFetchStage u_InstructionFetchStage (
       .clk         (clk),
       .rst         (rst),
-      .freeze      (freeze),
+      .freeze      (bothFreeze),
       .Branch_taken(b_exe),
       .BranchAddr  (branchAddress_exe),
       .PC          (pc_if),
@@ -65,7 +79,7 @@ module ARMModule (
   InstructionFetchStageReg u_InstructionFetchStageReg (
       .clk            (clk),
       .rst            (rst),
-      .freeze         (freeze),
+      .freeze         (bothFreeze),
       .flush          (flush),
       .PC_in          (pc_if),
       .Instruction_in (instruction_if),
@@ -104,6 +118,7 @@ module ARMModule (
   InstructionDecodeStageReg u_InstructionDecodeStageReg (
       .clk                  (clk),
       .rst                  (rst),
+      .freeze               (bothFreeze),
       .flush                (flush),
       .writeBackEnabled_in  (writeBackEnabled_id),
       .memoryReadEnabled_in (memoryReadEnabled_id),
@@ -167,6 +182,7 @@ module ARMModule (
   ExecutionStageReg u_ExecutionStageReg (
       .clk                 (clk),
       .rst                 (rst),
+      .freeze              (SRAMFreeze),
       .writebackEnabledIn  (writeBackEnabled_exe),
       .memoryReadEnabledIn (memoryReadEnabled_exe),
       .memoryWriteEnabledIn(memoryWriteEnabled_exe),
@@ -188,12 +204,23 @@ module ARMModule (
       .memoryWriteEnabled(memoryWriteEnabled_mem),
       .aluResult         (aluResult_mem),
       .valRm             (valRm_mem),
-      .data              (data_mem)
+
+      .SRAMData   (SRAMData),
+      .SRAMAddress(SRAMAddress),
+      .SRAMUB     (SRAMUB),
+      .SRAMLB     (SRAMLB),
+      .SRAMOE     (SRAMOE),
+      .SRAMCE     (SRAMCE),
+      .SRAMWE     (SRAMWE),
+
+      .data      (data_mem),
+      .SRAMFreeze(SRAMFreeze)
   );
 
   MemoryStageReg u_MemoryStageReg (
       .clk                 (clk),
       .rst                 (rst),
+      .freeze              (SRAMFreeze),
       .destination_in      (destination_mem),
       .data_in             (data_mem),
       .aluResult_in        (aluResult_mem),
