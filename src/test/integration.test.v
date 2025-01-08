@@ -2,11 +2,31 @@ module ARMModuleTest ();
   reg clk, rst;
   reg forwardingEnabled;
 
-  ARMModule u_ARMModule (
-      .clk(clk),
-      .rst(rst),
-      .forwardingEnabled(forwardingEnabled)
+  wire [17:0] addr;
+  wire [15:0] data;
+  wire we;
+
+  SRAM u_SRAM (
+      .clk (clk),
+      .addr(addr),
+      .we  (we),
+      .data(data)
   );
+
+
+  ARMModule u_ARMModule (
+      .clk              (clk),
+      .rst              (rst),
+      .forwardingEnabled(forwardingEnabled),
+      .SRAMData         (data),
+      .SRAMAddress      (addr),
+      .SRAMUB           (),
+      .SRAMLB           (),
+      .SRAMOE           (),
+      .SRAMCE           (),
+      .SRAMWE           (we)
+  );
+
 
   initial begin
     clk = 0;

@@ -118,7 +118,7 @@ module ARMModule (
   InstructionDecodeStageReg u_InstructionDecodeStageReg (
       .clk                  (clk),
       .rst                  (rst),
-      .freeze               (bothFreeze),
+      .freeze               (SRAMFreeze),
       .flush                (flush),
       .writeBackEnabled_in  (writeBackEnabled_id),
       .memoryReadEnabled_in (memoryReadEnabled_id),

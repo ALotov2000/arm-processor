@@ -36,6 +36,15 @@ add wave -hex -group        {Memory}               sim:/$TB/u_ARMModule/u_Memory
 add wave -decimal -group        {Memory}               sim:/$TB/u_ARMModule/u_MemoryStage/u_Memory/registers
 add wave -binary -group        {Status}               sim:/$TB/u_ARMModule/u_StatusRegister/out
 add wave -hex -group -r     {all}              sim:/$TB/*
+add wave -binary -position 0 sim:/$TB/u_ARMModule/SRAMFreeze
+add wave -decimal -position 0 -group -r {SRAMController} sim:/$TB/u_ARMModule/u_MemoryStage/u_SRAMController/*
+add wave -binary -position 0 sim:/$TB/u_ARMModule/hazardFreeze
+add wave -binary -position 0 sim:/$TB/u_ARMModule/bothFreeze
+add wave -hex -position 0 sim:/$TB/u_ARMModule/writeBackValue_wb
+add wave -hex -position 0 sim:/$TB/u_ARMModule/writeBackEnabled_wb
+add wave -hex -position 0 sim:/$TB/u_SRAM/mem[1024]
+add wave -hex -position 0 sim:/$TB/u_SRAM/mem[1028]
+add wave -decimal -position 0 sim:/$TB/u_SRAM/mem
 
 #=========================== Configure wave signals =============================
 # configure wave -signalnamewidth 2

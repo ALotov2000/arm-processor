@@ -17,8 +17,7 @@ module RegisterWithFreezeAndFlush #(parameter WIDTH = 32)
         else begin
             if (flush) begin
                 out <= {WIDTH{1'b0}};
-            end
-            else if (~freeze) begin
+            end else if (~freeze) begin
                 out <= in;
             end
         end

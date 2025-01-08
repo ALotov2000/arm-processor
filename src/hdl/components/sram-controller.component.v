@@ -47,6 +47,12 @@ module SRAMController (
   reg [15:0] passedData;
   reg [31:0] nextDataOut;
 
+  reg [31:0] trueAddress;
+
+  always @(address) begin
+    trueAddress = address;
+  end
+
   always @(posedge clk or posedge rst) begin
     if (rst) begin
       ps <= 0;
@@ -91,34 +97,38 @@ module SRAMController (
     endcase
   end
 
-  always @(ps) begin
+  always @(ps, read, write) begin
     SRAMWE = 1'b1;
     freeze = 1'b1;
     SRAMAddress = 18'b0;
     passedData = 16'bz;
+    nextDataOut = dataOut;
     case (ps)
       `Idle: begin
-        freeze = 1'b0;
+        freeze = read | write;
       end
       `DataWriteLow: begin
         SRAMWE = 0;
-        SRAMAddress = {address[18:2], 1'b0};
+        SRAMAddress = {trueAddress[18:2], 1'b0};
         passedData = dataIn[15:0];
       end
       `DataWriteHigh: begin
         SRAMWE = 0;
-        SRAMAddress = {address[18:2], 1'b1};
+        SRAMAddress = {trueAddress[18:2], 1'b1};
         passedData = dataIn[31:16];
       end
       `DataReadLow: begin
-        SRAMAddress = {address[18:2], 1'b0};
+        SRAMAddress = {trueAddress[18:2], 1'b0};
       end
       `DataReadHigh: begin
-        SRAMAddress = {address[18:2], 1'b1};
+        SRAMAddress = {trueAddress[18:2], 1'b1};
         nextDataOut = {dataOut[15:0], SRAMData[15:0]};
       end
       `DataReadAux: begin
         nextDataOut = {SRAMData[15:0], dataOut[15:0]};
+      end
+      `Done: begin
+        freeze = 1'b0;
       end
       default: ;
     endcase

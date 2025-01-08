@@ -31,6 +31,9 @@ vsim    -voptargs=+acc -debugDB $TB
 #======================= Adding signals to the wave window =====================
 add wave -hex -group        {TB}               sim:/$TB/*
 add wave -hex -group -r     {all}              sim:/$TB/*
+add wave -position 0  sim:/$TB/u_SRAM/mem[2048]
+add wave -position 0  sim:/$TB/u_SRAM/addr
+add wave -position 0  sim:/$TB/u_SRAM/data
 
 #=========================== Configure wave signals =============================
 # configure wave -signalnamewidth 2

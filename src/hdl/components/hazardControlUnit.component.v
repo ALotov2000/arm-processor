@@ -20,9 +20,6 @@ module HazardControlUnit (
   always @(*) begin
     hazard = 1'b0;
 
-    $display("hazard control: writeBackEnabled_exe = %b", writeBackEnabled_exe);
-    $display("hazard control: writeBackEnabled_mem = %b", writeBackEnabled_mem);
-
     if (writeBackEnabled_exe) begin
       if (src1 == destination_exe || (twoSrc && src2 == destination_exe)) begin
         hazard = 1'b1;
@@ -35,5 +32,9 @@ module HazardControlUnit (
         end
       end
     end
+
+    $display("hazard control: writeBackEnabled_exe = %b", writeBackEnabled_exe);
+    $display("hazard control: writeBackEnabled_mem = %b", writeBackEnabled_mem);
+    $display("hazard control: hazard = %b", hazard);
   end
 endmodule
