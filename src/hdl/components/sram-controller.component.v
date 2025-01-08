@@ -45,12 +45,15 @@ module SRAMController (
   reg [4:0] ps, ns;
 
   reg [15:0] passedData;
+  reg [31:0] nextDataOut;
 
   always @(posedge clk or posedge rst) begin
     if (rst) begin
       ps <= 0;
+      dataOut <= 0;
     end else begin
       ps <= ns;
+      dataOut <= nextDataOut;
     end
   end
 
@@ -91,7 +94,7 @@ module SRAMController (
   always @(ps) begin
     SRAMWE = 1'b1;
     freeze = 1'b1;
-    SRAMAddress = 18'bz;
+    SRAMAddress = 18'b0;
     passedData = 16'bz;
     case (ps)
       `Idle: begin
@@ -112,10 +115,10 @@ module SRAMController (
       end
       `DataReadHigh: begin
         SRAMAddress = {address[18:2], 1'b1};
-        dataOut = {dataOut[15:0], SRAMData[15:0]};
+        nextDataOut = {dataOut[15:0], SRAMData[15:0]};
       end
       `DataReadAux: begin
-        dataOut = {SRAMData[15:0], dataOut[15:0]};
+        nextDataOut = {SRAMData[15:0], dataOut[15:0]};
       end
       default: ;
     endcase
